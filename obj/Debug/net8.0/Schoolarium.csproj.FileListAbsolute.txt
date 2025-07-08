@@ -1,0 +1,14 @@
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/bin/Debug/net8.0/Schoolarium
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/bin/Debug/net8.0/Schoolarium.deps.json
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/bin/Debug/net8.0/Schoolarium.runtimeconfig.json
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/bin/Debug/net8.0/Schoolarium.dll
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/bin/Debug/net8.0/Schoolarium.pdb
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.AssemblyInfoInputs.cache
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.AssemblyInfo.cs
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.csproj.CoreCompileInputs.cache
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.dll
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/refint/Schoolarium.dll
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.pdb
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.genruntimeconfig.cache
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/ref/Schoolarium.dll
