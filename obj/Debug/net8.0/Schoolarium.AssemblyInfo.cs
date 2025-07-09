@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Schoolarium")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92fd09a1bf28da58e63ffd1e1efb4ff9bea2501d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Schoolarium")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Schoolarium")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

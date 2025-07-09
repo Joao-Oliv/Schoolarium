@@ -12,3 +12,4 @@
 /home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.pdb
 /home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.genruntimeconfig.cache
 /home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/ref/Schoolarium.dll
+/home/joao/Documentos/Projects/DotNet_Projects/Schoolarium/obj/Debug/net8.0/Schoolarium.sourcelink.json

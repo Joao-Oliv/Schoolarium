@@ -2,7 +2,13 @@ namespace Schoolarium;
 
 public class Menu
 {
-    Dictionary<string, List<int>> students = new Dictionary<string, List<int>>(); 
+    private Dictionary<string, List<int>> students = new Dictionary<string, List<int>>
+    {
+        { "1. Elis", new List<int> { 10, 10, 10, 10 } },
+        { "2. João", new List<int> { 60, 50, 32, 88 } },
+        { "3. Rogerinho", new List<int> { 30, 30, 30, 30 } },
+        { "4. Manola", new List<int> { 70, 75, 77, 81 } }
+    };
     
     public Menu()
     {
@@ -71,11 +77,13 @@ public class Menu
         Console.WriteLine("Insert a new student: ");
         
         string studentName = Console.ReadLine();
+        int index = students.Count() + 1;
+        string listIndexData = index.ToString() + ". " + studentName; 
         
-        students.Add(studentName, new List<int>());
+        students.Add(listIndexData, new List<int>());
         
         Console.WriteLine($"Student {studentName} has been added");
-        Console.WriteLine("Press any key to continue");
+        Console.WriteLine("\nPress any key to continue");
         Console.ReadKey();
         Console.Clear();
     }
@@ -102,13 +110,9 @@ public class Menu
 
         if (students.Count() > 1)
         {
-            int i = 1;
-            
             foreach (string name in students.Keys)
             {
-                Console.WriteLine($"{i}. {name}");
-
-                i++;
+                Console.WriteLine(name);
             }
         }
         else
@@ -119,5 +123,20 @@ public class Menu
         Console.WriteLine("Press any key to continue");
         Console.ReadKey();
         Console.Clear();
+    }
+
+    public void insertGrade()
+    {
+        int index = Convert.ToInt32(Console.ReadLine());
+        
+        foreach (string indexName in students.Keys)
+        {
+            chat firstChar = students[indexName];
+
+            if (index.ToString() == firstChar)
+            {
+                
+            }
+        }
     }
 }
