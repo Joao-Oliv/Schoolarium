@@ -28,6 +28,7 @@ public class Menu
             Console.WriteLine("1. Add a student");
             Console.WriteLine("2. List students");
             Console.WriteLine("3. Insert student's grades");
+            Console.WriteLine("4. Show student's grades");
             Console.WriteLine("0. Bye");
 
             try
@@ -59,6 +60,11 @@ public class Menu
                 case 3:
                     
                     this.insertStudentsGrades();
+                    break;
+                
+                case 4:
+
+                    this.showStudentsGrades();
                     break;
                 
                 default:
@@ -93,10 +99,7 @@ public class Menu
         Console.Clear();
         Console.WriteLine("List of students registered:");
 
-        foreach (string name in students.Keys)
-        {
-            Console.WriteLine($"{name}");
-        }
+        this.showStudentsMenu();
         
         Console.WriteLine("Press any key to continue");
         Console.ReadKey();
@@ -108,16 +111,9 @@ public class Menu
         Console.Clear();
         Console.WriteLine("Please, choose the student: ");
 
-        if (students.Count() > 1)
+        if (this.showStudentsMenu())
         {
-            foreach (string name in students.Keys)
-            {
-                Console.WriteLine(name);
-            }
-        }
-        else
-        {   
-            Console.WriteLine("No students registered");
+            this.insertGrade();
         }
 
         Console.WriteLine("Press any key to continue");
@@ -127,16 +123,95 @@ public class Menu
 
     public void insertGrade()
     {
-        int index = Convert.ToInt32(Console.ReadLine());
+        Console.Clear();
+
+        if (this.showStudentsMenu())
+        {
+            string studentKey = this.getStudentMenu();
+
+            if (studentKey != null)
+            {
+                Console.WriteLine($"\n{studentKey} selected");
+                Console.WriteLine("Please, insert the grade of the student: ");
+
+                int grade = Convert.ToInt32(Console.ReadLine());
+
+                students[studentKey].Add(grade);
+
+                Console.WriteLine($"{studentKey} grade was {grade}");
+            }
+            else
+            {
+                Console.WriteLine("\nNo students registered with this index");
+            }
+        }
+    }
+
+    public void showStudentsGrades()
+    {
+        Console.Clear();
+        Console.WriteLine("Please, choose the student: ");
+
+        if (this.showStudentsMenu())
+        {
+            string studentKey = this.getStudentMenu();
+
+            if (studentKey != null)
+            {
+                List<int> studentGrades = students[studentKey];
+                
+                Console.WriteLine($"********************************");
+                Console.WriteLine($"\n{studentKey}");
+
+                for (int i = 0; i < studentGrades.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1} = {studentGrades[i]}");
+                }
+                
+                Console.WriteLine($"********************************");
+            }
+        }
+        
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
+        Console.Clear();
+    }
+
+    public bool showStudentsMenu()
+    {
+        bool existStudents = false;
+        
+        if (students.Count() > 1)
+        {
+            foreach (string name in students.Keys)
+            {
+                Console.WriteLine(name);
+            }
+            
+            existStudents = true;
+        }
+        else
+        {
+            Console.WriteLine("No students registered");
+        }
+
+        return existStudents;
+    }
+
+    public string getStudentMenu()
+    {
+        string studentName = null;
+        char index = Console.ReadKey().KeyChar;
         
         foreach (string indexName in students.Keys)
         {
-            chat firstChar = students[indexName];
-
-            if (index.ToString() == firstChar)
+            if (index == indexName[0])
             {
-                
+                studentName = indexName;
+                break;
             }
         }
+        
+        return studentName;
     }
 }
