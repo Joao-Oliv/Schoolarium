@@ -67,6 +67,10 @@ public class Menu
                     this.showStudentsGrades();
                     break;
                 
+                case 5:
+                    
+                    break;
+                
                 default:
                     
                     Console.WriteLine("Invalid Command, try again");
@@ -77,108 +81,11 @@ public class Menu
         } while (iterator != 0);
     }
 
-    public void insertStudent()
-    {
-        Console.Clear();
-        Console.WriteLine("Insert a new student: ");
-        
-        string studentName = Console.ReadLine();
-        int index = students.Count() + 1;
-        string listIndexData = index.ToString() + ". " + studentName; 
-        
-        students.Add(listIndexData, new List<int>());
-        
-        Console.WriteLine($"Student {studentName} has been added");
-        Console.WriteLine("\nPress any key to continue");
-        Console.ReadKey();
-        Console.Clear();
-    }
-
-    public void listStudents()
-    {
-        Console.Clear();
-        Console.WriteLine("List of students registered:");
-
-        this.showStudentsMenu();
-        
-        Console.WriteLine("Press any key to continue");
-        Console.ReadKey();
-        Console.Clear();
-    }
-
-    public void insertStudentsGrades()
-    {
-        Console.Clear();
-        Console.WriteLine("Please, choose the student: ");
-
-        if (this.showStudentsMenu())
-        {
-            this.insertGrade();
-        }
-
-        Console.WriteLine("Press any key to continue");
-        Console.ReadKey();
-        Console.Clear();
-    }
-
-    public void insertGrade()
-    {
-        Console.Clear();
-
-        if (this.showStudentsMenu())
-        {
-            string studentKey = this.getStudentMenu();
-
-            if (studentKey != null)
-            {
-                Console.WriteLine($"\n{studentKey} selected");
-                Console.WriteLine("Please, insert the grade of the student: ");
-
-                int grade = Convert.ToInt32(Console.ReadLine());
-
-                students[studentKey].Add(grade);
-
-                Console.WriteLine($"{studentKey} grade was {grade}");
-            }
-            else
-            {
-                Console.WriteLine("\nNo students registered with this index");
-            }
-        }
-    }
-
-    public void showStudentsGrades()
-    {
-        Console.Clear();
-        Console.WriteLine("Please, choose the student: ");
-
-        if (this.showStudentsMenu())
-        {
-            string studentKey = this.getStudentMenu();
-
-            if (studentKey != null)
-            {
-                List<int> studentGrades = students[studentKey];
-                
-                Console.WriteLine($"********************************");
-                Console.WriteLine($"\n{studentKey}");
-
-                for (int i = 0; i < studentGrades.Count; i++)
-                {
-                    Console.WriteLine($"{i + 1} = {studentGrades[i]}");
-                }
-                
-                Console.WriteLine($"********************************");
-            }
-        }
-        
-        Console.WriteLine("Press any key to continue");
-        Console.ReadKey();
-        Console.Clear();
-    }
-
     public bool showStudentsMenu()
     {
+        Console.Clear();
+        Console.WriteLine("Please, choose the student: ");
+        
         bool existStudents = false;
         
         if (students.Count() > 1)
@@ -213,5 +120,114 @@ public class Menu
         }
         
         return studentName;
+    }
+    
+    public void insertStudent()
+    {
+        Console.Clear();
+        Console.WriteLine("Insert a new student: ");
+        
+        string studentName = Console.ReadLine();
+        int index = students.Count() + 1;
+        string listIndexData = index.ToString() + ". " + studentName; 
+        
+        students.Add(listIndexData, new List<int>());
+        
+        Console.WriteLine($"Student {studentName} has been added");
+        Console.WriteLine("\nPress any key to continue");
+        Console.ReadKey();
+        Console.Clear();
+    }
+
+    public void listStudents()
+    {
+        Console.Clear();
+        Console.WriteLine("List of students registered:");
+
+        this.showStudentsMenu();
+        
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
+        Console.Clear();
+    }
+
+    public void insertStudentsGrades()
+    {
+        Console.Clear();
+
+        if (this.showStudentsMenu())
+        {
+            string studentKey = this.getStudentMenu();
+
+            if (studentKey != null)
+            {
+                Console.WriteLine($"\n{studentKey} selected");
+                Console.WriteLine("Please, insert the grade of the student: ");
+
+                int grade = Convert.ToInt32(Console.ReadLine());
+
+                students[studentKey].Add(grade);
+
+                Console.WriteLine($"{studentKey} grade was {grade}");
+            }
+            else
+            {
+                Console.WriteLine("\nNo students registered with this index");
+            }
+        }
+
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
+        Console.Clear();
+    }
+
+    public void showStudentsGrades()
+    {
+        Console.Clear();
+        Console.WriteLine("Please, choose the student: ");
+
+        if (this.showStudentsMenu())
+        {
+            string studentKey = this.getStudentMenu();
+
+            if (studentKey != null)
+            {
+                List<int> studentGrades = students[studentKey];
+                
+                Console.WriteLine($"********************************");
+                Console.WriteLine($"\n{studentKey}");
+
+                for (int i = 0; i < studentGrades.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1} = {studentGrades[i]}");
+                }
+                
+                Console.WriteLine($"********************************");
+            }
+        }
+        
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
+        Console.Clear();
+    }
+
+    public void getStudentMedia()
+    {
+        Console.Clear();
+        Console.WriteLine("Please, choose the student: ");
+
+        if (this.showStudentsMenu())
+        {
+            string studentKey = this.getStudentMenu();
+
+            if (studentKey != null)
+            {
+                
+            }
+        }
+        
+        Console.WriteLine("Press any key to continue");
+        Console.ReadKey();
+        Console.Clear();
     }
 }
